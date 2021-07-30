@@ -8,6 +8,10 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/jaricardodev/Paginator</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/jaricardodev/Paginator</RepositoryUrl>
+    <PackageIcon>paginator.png</PackageIcon>
+    <PackageIconUrl />
   </PropertyGroup>
 
   <ItemGroup>
