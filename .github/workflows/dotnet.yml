@@ -23,10 +23,8 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
-    - name: Publish
-      uses: brandedoutcast/publish-nuget@v2.5.5
+    - name: publish nuget package
+      uses: dansiegel/publish-nuget@2
       with:
-        PROJECT_FILE_PATH: Model/Model.csproj
-        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-        PACKAGE_NAME: Jaricardodev.Paginator.Model
-        VERSION_FILE_PATH: Model/Properties/AssemblyInfo.cs
+        filename: 'Model\bin\Release\*.nupkg'
+        apiKey: ${{ secrets.NUGET_API_KEY }}
