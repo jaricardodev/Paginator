@@ -1,10 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyName>Jaricardodev.Paginator.Model</AssemblyName>
-    <RootNamespace>Jaricardodev.Paginator.Model</RootNamespace>
-        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AssemblyName>Jaricardodev.Paginator.Persistence</AssemblyName>
+    <RootNamespace>Jaricardodev.Paginator.Persistence</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +11,11 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj" />
   </ItemGroup>
 
 </Project>
