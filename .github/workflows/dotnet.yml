@@ -23,8 +23,13 @@ jobs:
       run: dotnet build --no-restore --configuration Release
     - name: Test
       run: dotnet test --no-build --verbosity normal
-    - name: publish nuget package
+    - name: publish model nuget package
       uses: myci-actions/publish-nuget@5
       with:
         filename: 'Model\bin\Release\*.nupkg'
+        api-key: ${{ secrets.NUGET_API_KEY }}
+    - name: publish persistence nuget package
+      uses: myci-actions/publish-nuget@5
+      with:
+        filename: 'Persistence\bin\Release\*.nupkg'
         api-key: ${{ secrets.NUGET_API_KEY }}
