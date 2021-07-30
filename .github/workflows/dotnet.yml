@@ -26,5 +26,7 @@ jobs:
     - name: Publish
       uses: brandedoutcast/publish-nuget@v2.5.5
       with:
-        PROJECT_FILE_PATH: Paginator/Model.csproj
+        PROJECT_FILE_PATH: Model/Model.csproj
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+        PACKAGE_NAME: Jaricardodev.Paginator.Model
+        VERSION_FILE_PATH: Model/Properties/AssemblyInfo.cs
