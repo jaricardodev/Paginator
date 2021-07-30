@@ -1,9 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <AssemblyName>Jaricardodev.Paginator.Persistence</AssemblyName>
     <RootNamespace>Jaricardodev.Paginator.Persistence</RootNamespace>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/jaricardodev/Paginator</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/jaricardodev/Paginator</RepositoryUrl>
+    <PackageIcon>paginator.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,5 +21,15 @@
     <PackageReference Include="Jaricardodev.Paginator.Model" Version="1.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.8" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\paginator.png" Pack="true" PackagePath=""/>
+  </ItemGroup>
+
+  <Target Name="CreateProperties" AfterTargets="GitVersion">
+    <CreateProperty Value="$(GitBaseVersionMajor).$(GitBaseVersionMinor).$(GitBaseVersionPatch)">
+      <Output TaskParameter="Value" PropertyName="PackageVersion" />
+    </CreateProperty>
+  </Target>
 
 </Project>
