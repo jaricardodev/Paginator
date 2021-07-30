@@ -15,20 +15,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Properties\paginator.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Properties\paginator.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="GitInfo" Version="2.1.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Properties\paginator.png" Pack="true" PackagePath=""/>
   </ItemGroup>
 
   <Target Name="CreateProperties" AfterTargets="GitVersion">
