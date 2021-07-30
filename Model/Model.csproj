@@ -17,15 +17,13 @@
     </PackageReference>
   </ItemGroup>
 
-  <Target Name="CreateProperties" AfterTargets="GitInfo">
+  <Target Name="CreateProperties" AfterTargets="GitVersion">
 
-    <CreateProperty
-      Value="$(GitBaseVersionMajor).$(GitBaseVersionMinor).$(GitBaseVersionPatch)">
-      <Output
-        TaskParameter="Value"
-        PropertyName="PackageVersion" />
+    <CreateProperty Value="$(GitBaseVersionMajor).$(GitBaseVersionMinor).$(GitBaseVersionPatch)">
+      <Output TaskParameter="Value" PropertyName="PackageVersion" />
     </CreateProperty>
 
   </Target>
+
 
 </Project>
