@@ -28,3 +28,5 @@ jobs:
       with:
         PROJECT_FILE_PATH: Model/Model.csproj
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+        PACKAGE_NAME: Jaricardodev.Paginator.Model
+        VERSION_FILE_PATH: Model/Properties/AssemblyInfo.cs
