@@ -24,7 +24,7 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: publish nuget package
-      uses: dansiegel/publish-nuget@2
+      uses: dansiegel/publish-nuget@v1.01
       with:
         filename: 'Model\bin\Release\*.nupkg'
         apiKey: ${{ secrets.NUGET_API_KEY }}
