@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Jaricardodev.Paginator.Model.Capabilities
 {
-    public class PaginatedList<T> : IList<T>
+    public class PaginatedList<T> : IList<T>, IPaginatedList
     {
         private readonly List<T> _internalList;
         public int TotalItemsCount { get; set; }
