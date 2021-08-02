@@ -1,14 +1,19 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <OutputType>Library</OutputType>
     <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
+        <AssemblyName>Jaricardodev.Paginator.Persistence</AssemblyName>
+    <RootNamespace>Jaricardodev.Paginator.Persistence</RootNamespace>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/jaricardodev/Paginator</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/jaricardodev/Paginator</RepositoryUrl>
+    <PackageIcon>paginator.png</PackageIcon>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
 
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
@@ -19,7 +24,18 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Jaricardodev.Paginator.Model" Version="1.0.2" />
+    <PackageReference Include="Jaricardodev.Paginator.Model" Version="1.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\paginator.png" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <Target Name="CreateProperties" AfterTargets="GitVersion">
+    <CreateProperty Value="$(GitBaseVersionMajor).$(GitBaseVersionMinor).$(GitBaseVersionPatch)">
+      <Output TaskParameter="Value" PropertyName="PackageVersion" />
+    </CreateProperty>
+  </Target>
 
 </Project>

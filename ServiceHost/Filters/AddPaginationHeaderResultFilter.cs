@@ -1,32 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Jaricardodev.Paginator.Model.Capabilities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace ServiceHost.Filters
+namespace Jaricardodev.Paginator.Persistence.Filters
 {
     public class AddPaginationHeaderResultFilter : IAsyncResultFilter
     {
-        public Task OnResultExecutionAsync(ResultExecutingContext context, ResultExecutionDelegate next)
+        public async Task OnResultExecutionAsync(ResultExecutingContext context, ResultExecutionDelegate next)
         {
-            throw new NotImplementedException();
+            var result = context.Result as ObjectResult;
+            if (result?.Value is IPaginatedList value)
+            {
+                var paginationHeader = new
+                {
+                    value.TotalItemsCount,
+                    value.TotalPageCount
+                };
 
-            /* var result = context.Result as ObjectResult;
-             if (result?.Value is IPaginatedList value)
-                 result.Value = new
-                 {
-                     Id = value.Id,
-                     Username = value.Username,
-                     Fullname = value.Fullname,
-                     Mobile = value.Mobile,
-                     Email = value.Email,
-                     UpdatedAt = value.UpdatedAt
-                 };
-             await next();*/
+                context.HttpContext.Response.Headers.Add("X-Pagination", Newtonsoft.Json.JsonConvert.SerializeObject(paginationHeader));
+            }
+            await next();
         }
     }
 }
