@@ -3,7 +3,7 @@ using Jaricardodev.Paginator.Model.Capabilities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace Jaricardodev.Paginator.Persistence.Filters
+namespace Jaricardodev.Paginator.ServiceHost.Filters
 {
     public class AddPaginationHeaderResultFilter : IAsyncResultFilter
     {

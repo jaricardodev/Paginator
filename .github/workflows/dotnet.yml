@@ -33,3 +33,8 @@ jobs:
       with:
         filename: 'Persistence\bin\Release\*.nupkg'
         api-key: ${{ secrets.NUGET_API_KEY }}
+    - name: publish servicehost nuget package
+      uses: myci-actions/publish-nuget@5
+      with:
+        filename: 'ServiceHost\bin\Release\*.nupkg'
+        api-key: ${{ secrets.NUGET_API_KEY }}

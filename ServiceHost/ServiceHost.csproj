@@ -4,8 +4,8 @@
     <TargetFramework>net5.0</TargetFramework>
     <OutputType>Library</OutputType>
     <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
-        <AssemblyName>Jaricardodev.Paginator.Persistence</AssemblyName>
-    <RootNamespace>Jaricardodev.Paginator.Persistence</RootNamespace>
+    <AssemblyName>Jaricardodev.Paginator.ServiceHost</AssemblyName>
+    <RootNamespace>Jaricardodev.Paginator.ServiceHost</RootNamespace>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
