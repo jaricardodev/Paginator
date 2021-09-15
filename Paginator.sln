@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Persistence\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceHost", "ServiceHost\ServiceHost.csproj", "{E6DA1CB2-68AD-40F1-AAA4-95EA89B322AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model.Test", "Model.Test\Model.Test.csproj", "{76959542-71CA-4C31-95A6-7394DBF8B5C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{E6DA1CB2-68AD-40F1-AAA4-95EA89B322AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6DA1CB2-68AD-40F1-AAA4-95EA89B322AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6DA1CB2-68AD-40F1-AAA4-95EA89B322AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76959542-71CA-4C31-95A6-7394DBF8B5C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76959542-71CA-4C31-95A6-7394DBF8B5C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76959542-71CA-4C31-95A6-7394DBF8B5C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76959542-71CA-4C31-95A6-7394DBF8B5C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
