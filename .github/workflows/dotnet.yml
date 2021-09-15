@@ -26,15 +26,15 @@ jobs:
     - name: publish model nuget package
       uses: jaricardodev/publish-nuget@6
       with:
-        filename: 'Model\bin\Release\*.nupkg'
+        filename: 'Model/bin/Release/*.nupkg'
         api-key: ${{ secrets.NUGET_API_KEY }}
     - name: publish persistence nuget package
       uses: jaricardodev/publish-nuget@6
       with:
-        filename: 'Persistence\bin\Release\*.nupkg'
+        filename: 'Persistence/bin/Release/*.nupkg'
         api-key: ${{ secrets.NUGET_API_KEY }}
     - name: publish servicehost nuget package
       uses: jaricardodev/publish-nuget@6
       with:
-        filename: 'ServiceHost\bin\Release\*.nupkg'
+        filename: 'ServiceHost/bin/Release/*.nupkg'
         api-key: ${{ secrets.NUGET_API_KEY }}
