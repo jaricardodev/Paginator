@@ -24,17 +24,17 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: publish model nuget package
-      uses: myci-actions/publish-nuget@5
+      uses: jaricardodev/publish-nuget@6
       with:
         filename: 'Model\bin\Release\*.nupkg'
         api-key: ${{ secrets.NUGET_API_KEY }}
     - name: publish persistence nuget package
-      uses: myci-actions/publish-nuget@5
+      uses: jaricardodev/publish-nuget@6
       with:
         filename: 'Persistence\bin\Release\*.nupkg'
         api-key: ${{ secrets.NUGET_API_KEY }}
     - name: publish servicehost nuget package
-      uses: myci-actions/publish-nuget@5
+      uses: jaricardodev/publish-nuget@6
       with:
         filename: 'ServiceHost\bin\Release\*.nupkg'
         api-key: ${{ secrets.NUGET_API_KEY }}
