@@ -26,13 +26,11 @@ jobs:
       run: dotnet build --no-restore --configuration Release 
       
     - name: Test
-      run: dotnet test --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=lcov
-           cp Model.Test/TestResults/*  Model.Test/TestResult
-   
+      run: dotnet test --results-directory "TestResult" --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=lcov
+             
     - name: Test Results
-      run: find Model.Test/TestResults/ -mindepth 2 -type f -print -exec mv {} Model.Test/TestResults/ \;
-           
-      
+      run: find TestResults/ -mindepth 2 -type f -print -exec mv {} TestResults/ \;
+                 
     - name: Publish coverage report to coveralls.io   
       uses: coverallsapp/github-action@master   
       with:
