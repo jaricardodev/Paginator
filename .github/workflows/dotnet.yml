@@ -27,6 +27,7 @@ jobs:
       
     - name: Test
       run: dotnet test --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=lcov
+           cp Model.Test/TestResults/*  Model.Test/TestResults
       
     - name: Publish coverage report to coveralls.io   
       uses: coverallsapp/github-action@master   
