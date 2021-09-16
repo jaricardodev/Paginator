@@ -30,7 +30,7 @@ jobs:
            cp Model.Test/TestResults/*  Model.Test/TestResult
    
     - name: Test Results
-      run: find Model.Test/TestResults/ -mindepth 2 -type f -print -exec mv {} Model.Test/TestResults/
+      run: find Model.Test/TestResults/ -mindepth 2 -type f -print -exec mv {} Model.Test/TestResults/ \;
            
       
     - name: Publish coverage report to coveralls.io   
